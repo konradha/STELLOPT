@@ -1,0 +1,21 @@
+[project]
+authors = ["Konrad Handrick <konradha@yahoo.com>"]
+channels = ["conda-forge"]
+description = ""
+name = "STELLOPT"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[dependencies]
+gcc = "*"
+gfortran = "*"
+cmake = "*"
+make = "*"
+openmpi = ">=5.0.6,<6"
+netcdf4 = "*"
+hdf5 = "*"
+lapack = "*"
+blas = "*"
+
+[tasks]
+build = { cmd = "bash build.sh" }

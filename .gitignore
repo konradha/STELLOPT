@@ -78,3 +78,7 @@ pySTEL/dist
 fort.*
 
 nohup.*
+
+# pixi environments
+.pixi
+*.egg-info
