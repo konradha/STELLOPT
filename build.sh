@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
+export STELLOPT_HOME=$(pwd)
 export STELLOPT_PATH=$(pwd)
-export MACHINE="ubuntu"
+#export MACHINE="ubuntu"
 export PIXI_PROJECT_ROOT=$(pwd)
 export PATH=$PIXI_PROJECT_ROOT/.pixi/envs/default/bin:$PATH
 
@@ -27,4 +28,4 @@ export NETCDF_FORTRAN_DIR="$PIXI_PROJECT_ROOT/.pixi/env"
 # need to symlink or fix this otherwise
 
 
-#./build_all -j8 -o release
+./build_all -j1 -o release

@@ -22,21 +22,21 @@
   FLAGS_D += -Wno-argument-mismatch
 
   # Need to allow argument mismatch for gfortran version 10 and above
-  GFORTRAN_VERSION := $(shell $(FC) -dumpversion)
-  ifeq "$(shell [ $(GFORTRAN_VERSION) -gt 9 ] && echo true)" "true"
-      FLAGS_R += -fallow-argument-mismatch
-      FLAGS_D += -fallow-argument-mismatch
-  endif
+  #GFORTRAN_VERSION := $(shell $(FC) -dumpversion)
+  #ifeq "$(shell [ $(GFORTRAN_VERSION) -gt 9 ] && echo true)" "true"
+  FLAGS_R += -fallow-argument-mismatch
+  FLAGS_D += -fallow-argument-mismatch
+  #endif
 
 #######################################################################
 #            MPI Options
 #######################################################################
   LMPI    = T
-  MPI_COMPILE = mpif90.openmpi
-  MPI_COMPILE_FREE = mpif90 -ffree-form \
+  MPI_COMPILE = $(shell pwd)/.pixi/envs/default/bin/mpif90 # mpif90.openmpi
+  MPI_COMPILE_FREE = $(shell pwd)/.pixi/envs/default/bin/mpif90 -ffree-form \
                      -ffree-line-length-none -ffixed-line-length-none
-  MPI_COMPILE_C = mpicc.openmpi
-  MPI_LINK = mpif90.openmpi
+  MPI_COMPILE_C = $(shell pwd)/.pixi/envs/default/bin/mpicc
+  MPI_LINK = $(shell pwd)/.pixi/envs/default/bin/mpif90
   MPI_RUN = mpiexec
   MPI_RUN_OPTS = --use-hwthread-cpus
 #  MPI_RUN_OPTS_SM = -np 16

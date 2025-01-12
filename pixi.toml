@@ -13,9 +13,12 @@ cmake = "*"
 make = "*"
 openmpi = ">=5.0.6,<6"
 netcdf4 = "*"
-hdf5 = "*"
+hdf5 = {version="*", build="mpi_openmpi*"}
 lapack = "*"
 blas = "*"
+openmpi-mpifort = "*"
+netcdf-fortran = "*"
+scalapack = "*"
 
 [tasks]
 build = { cmd = "bash build.sh" }

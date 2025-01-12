@@ -65,4 +65,4 @@ do
 done
 
 # make a dynamic library
-make pystel
+#make pystel
